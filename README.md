@@ -19,16 +19,16 @@ This project is a webpage for Delani Studio which gives a detailed description o
 ## Support and contact details
 If you run into any issue or have questions, ideas or concerns, kindly reach me though the contacts provided or feel free to make a contibution to the code.
 ## Setup Instructions
-Clone the repository. Navigate to the folder and double click the index.html file to open it in a browser then you can explore the portfolio sections.
+Clone the repository. Install dependancies by running npm install, run the application using npm start/ node app.js. View the website locally using the port specified.
 ## List of contributors 
-Bonface Mwangi
-Frank Ochari
-Hillary Vula
-Dorothy Gichaba
+* Bonface Mwangi
+* Frank Ochari
+* Hillary Vula
+* Dorothy Gichaba
 ## Link to live site on Render
 ##############
 ## Contact Information
-bonface@gmail.com
+bmwairimu83@gmail.com
 ## Licence Information
 Distributed under the MIT License. See License.txt for more information.
 
