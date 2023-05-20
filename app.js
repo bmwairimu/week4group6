@@ -1,6 +1,6 @@
 // Import express package
 const express = require('express');
-const indexRouter = require('./routes/index');
+const indexRouter = require('routes\routes.js');
  
 // Initialize express
 const app = express();
