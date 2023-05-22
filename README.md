@@ -26,7 +26,7 @@ Clone the repository. Install dependancies by running npm install, run the appli
 * Hillary Vula
 * Dorothy Gichaba
 ## Link to live site on Render
-##############
+https://delani-studio-tzqa.onrender.com
 ## Contact Information
 bmwairimu83@gmail.com
 ## Licence Information
