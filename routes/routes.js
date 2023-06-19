@@ -32,11 +32,43 @@
 
 // exports.route = route;
 
-const express = require('express');
+const express = require("express");
+const MongoClient = require("mongodb").MongoClient;
+
+const uri =
+	"mongodb+srv://dbadmin:safaricom1234@test-app.kzkdify.mongodb.net";
+const client = new MongoClient(uri);
 const routes = express.Router();
 
-routes.get('/', (req, res)=>{
-    res.render('index');
+routes.get("/", (req, res) => {
+	res.render("index");
+});
+
+// Write route code to store contact us submit form in mongo db
+routes.post("/contact", async (req, res) => {
+	try {
+		const { name, email, message } = req.body;
+		const database = client.db("myFirstDatabase");
+		const collection = database.collection("contacts");
+		const contactDoc = {
+			name,
+			email,
+			message,
+		};
+
+		const result = await collection.insertOne(contactDoc);
+
+		console.log(`A document was inserted with the _id: ${result.insertedId}`);
+
+		return res.status(200).json({
+			message: "Saved successfully",
+			contact: contact,
+		});
+	} catch (error) {
+		console.log(error);
+	} finally {
+		await client.close();
+	}
 });
 
 module.exports = routes;
