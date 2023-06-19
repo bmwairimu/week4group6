@@ -242,7 +242,7 @@
         <div class="container">
             <h1 class="text-center text-uppercase pb-3 text-white">Contact us</h1>
             <div class="row mt-3 justify-content-center">
-                <form action="" class="col-md-8 col-lg-7" id="contact-form">
+                <form action="POST" class="col-md-8 col-lg-7" id="contact-form">
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <input type="text" class="form-control name" placeholder="Name...">
@@ -307,6 +307,43 @@
 
     <!-- custom script -->
     <script src="./js/script.js"></script>
+
+    <script>
+        const form = document.getElementById('contact-form');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.querySelector('.name').value;
+            const email = document.querySelector('#email').value;
+            const message = document.querySelector('#message').value;
+
+            const data = {
+                name,
+                email,
+                message
+            }
+
+            try {
+                const response = await fetch('/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+               
+            } catch (error) {
+                console.error('An error occurred while submitting the form data:', error);//error from db
+            }
+            if (response.ok) {
+                    console.log('Form data submitted successfully.');
+                } else {
+                    console.error('Failed to submit form data.');//error from the landing page
+                }
+        })
+    </script>
 </body>
 
 </html>
